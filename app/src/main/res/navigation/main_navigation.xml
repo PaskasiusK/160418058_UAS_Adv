@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/dailyListFragment">
+
+    <fragment
+        android:id="@+id/dailyListFragment"
+        android:name="com.ubaya.uts_160418058.view.DailyListFragment"
+        android:label="Daily List"
+        tools:layout="@layout/fragment_daily_list">
+        <action
+            android:id="@+id/actionDailyDetail"
+            app:destination="@id/detailTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTaskFragment"
+        android:name="com.ubaya.uts_160418058.view.DetailTaskFragment"
+        android:label="Detail Task"
+        tools:layout="@layout/fragment_detail_task" >
+        <argument
+            android:name="position"
+            app:argType="string" />
+        <argument
+            android:name="tipe"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ubaya.uts_160418058.view.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/actionSelectTheme"
+            app:destination="@id/selectThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectThemeFragment"
+        android:name="com.ubaya.uts_160418058.view.SelectThemeFragment"
+        android:label="Select Theme"
+        tools:layout="@layout/fragment_select_theme" />
+    <fragment
+        android:id="@+id/monthlyListFragment"
+        android:name="com.ubaya.uts_160418058.view.MonthlyListFragment"
+        android:label="Monthly List"
+        tools:layout="@layout/fragment_monthly_list" >
+        <action
+            android:id="@+id/actionMovieDetail"
+            app:destination="@id/detailTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weeklyListFragment"
+        android:name="com.ubaya.uts_160418058.view.WeeklyListFragment"
+        android:label="Weekly List"
+        tools:layout="@layout/fragment_weekly_list" >
+        <action
+            android:id="@+id/actionWeeklyDetail"
+            app:destination="@id/detailTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemCreate"
+        android:name="com.ubaya.uts_160418058.view.AddTaskFragment"
+        android:label="Add Task"
+        tools:layout="@layout/fragment_add_task" />
+    <fragment
+        android:id="@+id/itemHistory"
+        android:name="com.ubaya.uts_160418058.view.HistoryFragment"
+        android:label="Hiistory"
+        tools:layout="@layout/fragment_history" />
+</navigation>

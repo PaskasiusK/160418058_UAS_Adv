@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dailyListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_daily_24"
+        android:title="Daily"
+        android:visible="true"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/weeklyListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_weekly_24"
+        android:title="Weekly"
+        android:visible="true"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/monthlyListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_monthly_24"
+        android:title="Monthly"
+        android:visible="true"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/profileFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile"
+        android:visible="true"
+        app:showAsAction="always" />
+</menu>
