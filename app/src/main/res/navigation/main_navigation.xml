@@ -35,7 +35,7 @@
             android:id="@+id/actionSelectTheme"
             app:destination="@id/selectThemeFragment" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/selectThemeFragment"
         android:name="com.ubaya.uts_160418058.view.SelectThemeFragment"
         android:label="Select Theme"

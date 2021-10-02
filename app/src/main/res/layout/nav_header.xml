@@ -11,9 +11,11 @@
         android:layout_height="200dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/kannabg" />
+        app:srcCompat="@drawable/genshinbg"
+        tools:srcCompat="@drawable/genshinbg" />
 
     <TextView
         android:id="@+id/txtNama"
@@ -43,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            tools:srcCompat="@drawable/kanna" />
+            app:srcCompat="@drawable/fischl"
+            tools:srcCompat="@drawable/fischl" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
