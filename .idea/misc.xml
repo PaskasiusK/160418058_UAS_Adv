@@ -5,7 +5,7 @@
       <map>
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/daily_list_item.xml" value="0.176" />
-        <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/fragment_add_task.xml" value="0.23641304347826086" />
+        <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/fragment_add_task.xml" value="0.264" />
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/fragment_daily_list.xml" value="0.14166666666666666" />
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/fragment_detail_task.xml" value="0.264" />
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/fragment_history.xml" value="0.14375" />
@@ -13,6 +13,7 @@
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/fragment_select_theme.xml" value="0.176" />
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/fragment_weekly_list.xml" value="0.14375" />
+        <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/history_list_item.xml" value="0.4" />
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/monthly_list_item.xml" value="0.23641304347826086" />
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/nav_header.xml" value="0.4" />
         <entry key="..\:/Paskasius/advance native/UTS_160418058/app/src/main/res/layout/weekly_list_item.xml" value="0.20052083333333334" />

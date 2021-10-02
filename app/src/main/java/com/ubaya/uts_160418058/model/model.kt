@@ -1,7 +1,6 @@
 package com.ubaya.uts_160418058.model
 
 data class daily(
-    val id:String?,
     val title:String?,
     val description:String?,
     val time:String?,
@@ -11,7 +10,6 @@ data class daily(
 )
 
 data class weekly(
-    val id:String?,
     val title:String?,
     val description:String?,
     val date:String?,
@@ -21,7 +19,6 @@ data class weekly(
 )
 
 data class monthly(
-    val id:String?,
     val title:String?,
     val description:String?,
     val month:String?,
@@ -30,9 +27,8 @@ data class monthly(
     val photo_url:String?
 )
 data class history(
-    val id:String?,
     val title:String?,
-    val tipe:String?,
+    val date:String?,
     val category:String?,
     val priority:String?,
     val photo_url:String?

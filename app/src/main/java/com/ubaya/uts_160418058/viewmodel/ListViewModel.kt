@@ -12,6 +12,7 @@ import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ubaya.uts_160418058.model.daily
+import com.ubaya.uts_160418058.model.history
 import com.ubaya.uts_160418058.model.monthly
 import com.ubaya.uts_160418058.model.weekly
 
@@ -19,6 +20,7 @@ class ListViewModel(application: Application): AndroidViewModel(application) {
     val dailyLD = MutableLiveData<List<daily>>()
     val weeklyLD = MutableLiveData<List<weekly>>()
     val monthlyLD = MutableLiveData<List<monthly>>()
+    val historyLD = MutableLiveData<List<history>>()
     val taskLoadErrorLD = MutableLiveData<Boolean>()
     val loadingLD = MutableLiveData<Boolean>()
 
@@ -85,6 +87,31 @@ class ListViewModel(application: Application): AndroidViewModel(application) {
                 val sType = object : TypeToken<List<monthly>>() { }.type
                 val result = Gson().fromJson<List<monthly>>(response, sType)
                 monthlyLD.value = result
+                loadingLD.value = false
+                Log.d("showvoley", result.toString())
+
+            },
+            {
+                Log.d("showvoley", it.toString())
+                taskLoadErrorLD.value = true
+                loadingLD.value = false
+            })
+        stringRequest.tag = TAG
+        queue?.add(stringRequest)
+
+
+    }
+    fun refreshHistory() {
+        taskLoadErrorLD.value = false
+        loadingLD.value = true
+        queue = Volley.newRequestQueue(getApplication() )
+        val url = "https://api.npoint.io/2e71da2e8f4cf7afa735"
+        val stringRequest = StringRequest(
+            Request.Method.GET, url,
+            { response ->
+                val sType = object : TypeToken<List<history>>() { }.type
+                val result = Gson().fromJson<List<history>>(response, sType)
+                historyLD.value = result
                 loadingLD.value = false
                 Log.d("showvoley", result.toString())
 
