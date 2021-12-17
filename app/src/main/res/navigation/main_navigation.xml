@@ -21,10 +21,10 @@
         tools:layout="@layout/fragment_detail_task" >
         <argument
             android:name="position"
-            app:argType="string" />
-        <argument
-            android:name="tipe"
-            app:argType="string" />
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailTaskFragment_to_editTaskFragment"
+            app:destination="@id/editTaskFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -46,7 +46,7 @@
         android:label="Monthly List"
         tools:layout="@layout/fragment_monthly_list" >
         <action
-            android:id="@+id/actionMovieDetail"
+            android:id="@+id/actionMonthlyDetail"
             app:destination="@id/detailTaskFragment" />
     </fragment>
     <fragment
@@ -67,5 +67,17 @@
         android:id="@+id/itemHistory"
         android:name="com.ubaya.uts_160418058.view.HistoryFragment"
         android:label="Hiistory"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_itemHistory_to_detailTaskFragment"
+            app:destination="@id/detailTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="com.ubaya.uts_160418058.view.EditTaskFragment"
+        android:label="EditTaskFragment" >
+        <argument
+            android:name="uuid"
+            app:argType="integer" />
+    </fragment>
 </navigation>

@@ -43,7 +43,7 @@ class HistoryFragment : Fragment() {
         observeViewModel()
     }
     fun observeViewModel() {
-        viewModel.historyLD.observe(viewLifecycleOwner, Observer {
+        viewModel.TodoLD.observe(viewLifecycleOwner, Observer {
             historyListAdapter.updateHistoryList(it)
 
         })
@@ -57,11 +57,12 @@ class HistoryFragment : Fragment() {
 
         viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
             if(it == true) {
-                recViewHistory.visibility = View.GONE
-                progressBarHistory.visibility = View.VISIBLE
-            } else {
+
                 recViewHistory.visibility = View.VISIBLE
                 progressBarHistory.visibility = View.GONE
+            } else {
+                recViewHistory.visibility = View.GONE
+                progressBarHistory.visibility = View.VISIBLE
             }
         })
 

@@ -44,7 +44,7 @@ class WeeklyListFragment : Fragment() {
         observeViewModel()
     }
     fun observeViewModel() {
-        viewModel.weeklyLD.observe(viewLifecycleOwner, Observer {
+        viewModel.TodoLD.observe(viewLifecycleOwner, Observer {
             WeeklyListAdapter.updateWeeklyList(it)
 
         })
@@ -58,11 +58,12 @@ class WeeklyListFragment : Fragment() {
 
         viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
             if(it == true) {
-                recViewWeek.visibility = View.GONE
-                progressBar2.visibility = View.VISIBLE
-            } else {
+
                 recViewWeek.visibility = View.VISIBLE
                 progressBar2.visibility = View.GONE
+            } else {
+                recViewWeek.visibility = View.GONE
+                progressBar2.visibility = View.VISIBLE
             }
         })
 

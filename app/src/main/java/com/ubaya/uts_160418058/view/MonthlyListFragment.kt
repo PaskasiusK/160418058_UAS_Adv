@@ -43,7 +43,7 @@ class MonthlyListFragment : Fragment() {
         observeViewModel()
     }
     fun observeViewModel() {
-        viewModel.monthlyLD.observe(viewLifecycleOwner, Observer {
+        viewModel.TodoLD.observe(viewLifecycleOwner, Observer {
             monthlyListAdapter.updateMonthlyList(it)
 
         })
@@ -57,11 +57,12 @@ class MonthlyListFragment : Fragment() {
 
         viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
             if(it == true) {
-                recViewMonthly.visibility = View.GONE
-                progressBarMonthly.visibility = View.VISIBLE
-            } else {
                 recViewMonthly.visibility = View.VISIBLE
                 progressBarMonthly.visibility = View.GONE
+            } else {
+
+                recViewMonthly.visibility = View.GONE
+                progressBarMonthly.visibility = View.VISIBLE
             }
         })
 

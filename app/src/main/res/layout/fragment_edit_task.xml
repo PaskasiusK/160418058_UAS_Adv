@@ -12,13 +12,7 @@
             type="com.ubaya.uts_160418058.view.RadioClick" />
         <variable
             name="listener"
-            type="com.ubaya.uts_160418058.view.ButtonAddTodoClickListener" />
-        <variable
-            name="listenerDate"
-            type="com.ubaya.uts_160418058.view.DateClickListener" />
-        <variable
-            name="listener_time"
-            type="com.ubaya.uts_160418058.view.TimeClickListener" />
+            type="com.ubaya.uts_160418058.view.TodoSaveChangesClick" />
     </data>
     <FrameLayout
         android:layout_width="match_parent"
@@ -76,32 +70,6 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout3"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="24dp"
-                    android:hint="Date"
-                    app:endIconDrawable="@drawable/ic_baseline_daily_24"
-                    app:hintAnimationEnabled="true"
-                    app:hintEnabled="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtDate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:enabled="true"
-                        android:focusable="false"
-                        android:onClick="@{listenerDate::onDateClick}" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayout4"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -113,7 +81,7 @@
                     app:hintEnabled="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout8">
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/txtCategory"
@@ -152,7 +120,7 @@
                     android:text="Tipe"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />
 
                 <Button
                     android:id="@+id/btnSave"
@@ -161,14 +129,15 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="24dp"
+                    android:onClick=
+                        "@{(view)->listener.onTodoSaveChangesClick(view,todo)}"
                     android:text="Save"
-                    android:onClick="@{listener::onButtonAddTodo}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/radioGroupAdd" />
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
                 <RadioGroup
-                    android:id="@+id/radioGroupAdd"
+                    android:id="@+id/radioGroup2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -179,7 +148,7 @@
                         android:id="@+id/radioDaily"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:tag="Daily"
+                        android:checked="@{todo.tipe == `Daily`? true:false}"
                         android:onClick="@{(view)->radioListener.onRadioClick(view,`Daily`, todo)}"
                         android:text="Daily" />
 
@@ -187,7 +156,7 @@
                         android:id="@+id/radioWeekly"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:tag="Weekly"
+                        android:checked="@{todo.tipe ==`Weekly` ? true:false}"
                         android:onClick="@{(view)->radioListener.onRadioClick(view,`Weekly`, todo)}"
                         android:text="Weekly" />
 
@@ -195,13 +164,13 @@
                         android:id="@+id/radioMonthly"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:tag="Monthly"
+                        android:checked="@{todo.tipe ==`Monthly` ? true:false}"
                         android:onClick="@{(view)->radioListener.onRadioClick(view,`Monthly`, todo)}"
                         android:text="Monthly" />
                 </RadioGroup>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout6"
+                    android:id="@+id/textInputLayout7"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -214,35 +183,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtURL"
+                        android:id="@+id/txtLinkEdit"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
                         android:text="@={todo.photo_url}"
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout8"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="24dp"
-                    android:hint="Time"
-                    app:endIconDrawable="@drawable/ic_baseline_history_24"
-                    app:hintAnimationEnabled="true"
-                    app:hintEnabled="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtTime"
-                        android:onClick="@{listener_time::onTimeClick}"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:enabled="true"
-                        android:focusable="false" />
                 </com.google.android.material.textfield.TextInputLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
